@@ -29,4 +29,27 @@ class NewsService {
       return [];
     }
   }
+
+  Future<List<ArticleModel>> SearchFor({required String search}) async {
+    try {
+      Response response = await dio.get(
+          'https://gnews.io/api/v4/search?q=$search&apikey=c7bd4e2b68997a57ec7bd93dee549fbf');
+
+      Map<String, dynamic> JsonData = response.data;
+      print(JsonData);
+      List<dynamic> articles = JsonData['articles'];
+      List<ArticleModel> Myarticles = [];
+
+      for (var article in articles) {
+        Myarticles.add(ArticleModel(
+            url: article['url'],
+            image: article['image'],
+            title: article['title'],
+            subTitle: article['description']));
+      }
+      return Myarticles;
+    } catch (e) {
+      return [];
+    }
+  }
 }

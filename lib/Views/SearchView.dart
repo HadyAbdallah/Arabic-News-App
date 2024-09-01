@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:news/Widgets/NewsListViewBulder.dart';
 
-class CategoryView extends StatelessWidget {
-  const CategoryView({super.key, required this.category});
-  final String category;
+import '../Widgets/AppBar.dart';
+
+class SearchView extends StatelessWidget {
+  const SearchView({super.key, required this.search});
+  final String search;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +31,7 @@ class CategoryView extends StatelessWidget {
       ),
       body: CustomScrollView(
         slivers: [
-          NewsListViewBulder(category: category),
+          NewsListViewBulderForSearch(search: search),
         ],
       ),
     );
