@@ -13,7 +13,7 @@ class NewsService {
           'https://gnews.io/api/v4/top-headlines?country=eg&category=$newsType&apikey=c7bd4e2b68997a57ec7bd93dee549fbf');
 
       Map<String, dynamic> JsonData = response.data;
-      print(JsonData);
+
       List<dynamic> articles = JsonData['articles'];
       List<ArticleModel> Myarticles = [];
 

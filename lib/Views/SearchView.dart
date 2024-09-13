@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/Widgets/NewsListViewBulder.dart';
 
-import '../Widgets/AppBar.dart';
-
 class SearchView extends StatelessWidget {
   const SearchView({super.key, required this.search});
   final String search;
